@@ -62,26 +62,31 @@ module Espinita
     end
 
     def audited_hash
-      Hash[ audited_attributes.map{|o| [o.to_sym, self.send(o.to_sym)] } ]
+      hash = audited_attributes.map do |o|
+        old_value = self.send("#{o}_was".to_sym)
+        changes = old_value ? [old_value, self.send(o.to_sym)] : self.send(o.to_sym)
+        [o.to_sym, changes]
+      end
+      Hash[hash]
     end
 
 
     def audit_create
       #puts self.class.audit_callbacks
-      write_audit(:action => 'create', 
+      write_audit(:action => 'create',
                   :audited_changes => audited_hash,
                   :comment => audit_comment)
     end
 
     def audit_update
       #puts self.class.audit_callbacks
-      write_audit(:action => 'update', 
+      write_audit(:action => 'update',
                   :audited_changes => audited_hash,
                   :comment => audit_comment)
     end
 
     def audit_destroy
-      write_audit(:action => 'destroy', 
+      write_audit(:action => 'destroy',
                   :audited_changes => audited_hash,
                   :comment => audit_comment)
     end
