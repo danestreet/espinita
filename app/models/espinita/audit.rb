@@ -32,7 +32,7 @@ module Espinita
 
     def set_audit_user
       self.user           = RequestStore.store[:audited_user] if RequestStore.store[:audited_user]
-      self.remote_address = RequestStore.store[:audited_ip]   if RequestStore.store[:audited_ip]
+      # self.remote_address = RequestStore.store[:audited_ip]   if RequestStore.store[:audited_ip]
 
       nil # prevent stopping callback chains
     end
