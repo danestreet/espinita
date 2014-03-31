@@ -74,21 +74,21 @@ module Espinita
     def audit_create
       #puts self.class.audit_callbacks
       write_audit(:action => 'create',
-                  :audited_changes => audited_hash,
-                  :comment => audit_comment)
+                  :audited_changes => audited_hash)
+                  # :comment => audit_comment)
     end
 
     def audit_update
       #puts self.class.audit_callbacks
       write_audit(:action => 'update',
-                  :audited_changes => audited_hash,
-                  :comment => audit_comment)
+                  :audited_changes => audited_hash)
+                  # :comment => audit_comment)
     end
 
     def audit_destroy
       write_audit(:action => 'destroy',
-                  :audited_changes => audited_hash,
-                  :comment => audit_comment)
+                  :audited_changes => audited_hash)
+                  # :comment => audit_comment)
     end
 
     def write_audit(options)
