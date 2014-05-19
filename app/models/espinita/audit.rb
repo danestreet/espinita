@@ -1,6 +1,6 @@
 module Espinita
   class Audit < ActiveRecord::Base
-    self.table_name = 'audits'
+    #self.table_name = 'audits'
 
     belongs_to :auditable, polymorphic: true
     belongs_to :user, polymorphic: true
