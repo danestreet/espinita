@@ -3,12 +3,6 @@
 [![Build Status](https://secure.travis-ci.org/continuum/espinita.png)](http://travis-ci.org/continuum/espinita) [![Dependency Status](https://gemnasium.com/continuum/espinita.png)](https://gemnasium.com/continuum/espinita) [![Coverage Status](https://coveralls.io/repos/continuum/espinita/badge.png?branch=master)](https://coveralls.io/r/continuum/espinita?branch=master)
 =======
 
-## Audits activerecord models like a boss
-
-![Alt text](./espinita.jpg)
-
-Audit activerecord models like a boss. Tested in rails 4 and ruby 2.0.0.
-
 This project is heavily based in audited gem.
 
 ## Installation
